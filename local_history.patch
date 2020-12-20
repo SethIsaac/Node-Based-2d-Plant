@@ -1,0 +1,32 @@
+Index: core/src/pkg/playground/PlantObject.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- core/src/pkg/playground/PlantObject.java	(date 1607912596614)
++++ core/src/pkg/playground/PlantObject.java	(date 1607912596614)
+@@ -1,18 +1,19 @@
+ package pkg.playground;
+ 
+-import com.badlogic.gdx.graphics.Color;
+ import com.badlogic.gdx.math.Vector2;
+ 
+ import java.util.ArrayList;
+ 
+-public class PlantObject extends NodeStructure implements Renderable {
++public class PlantObject implements Renderable {
++    NodeStructure nodeStructure;
++
+     public PlantObject (Vector2 nodeVector) {
+-        super();
+         Node root = new Node(nodeVector);
+-        super.init(root);
++        nodeStructure = new NodeStructure();
++        nodeStructure.init(root);
+         System.out.println("Plant Created");
+     }
+-
++    //test change
+     public void growPlant (int amt) {
+         Layer layer = new Layer();
+         for (NodeGroup nodeGroup : getLastLayer().getLayer()){
